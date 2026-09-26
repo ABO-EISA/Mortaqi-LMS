@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mortaqi website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="icon" type="image/png" href="./imgs/favicon2.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    />
+  </head>
+  <body>
+    <!-- Scroll to top button -->
+    <div class="up">
+      <i class="fa-solid fa-arrow-up"></i>
+    </div>
+    <!-- Start Setting box -->
+    <div class="setting open">
+      <div class="toggle">
+        <i class="setting-icon fa-solid fa-gear"></i>
+      </div>
+      <div class="setting-container">
+        <div class="option-box Theme">
+          <h4 class="theme">Themes</h4>
+          <ul class="color-list">
+            <li class="active" data-color="#041337"></li>
+            <li data-color="#0f6e0f"></li>
+            <li data-color="#6c0a0a"></li>
+          </ul>
+        </div>
+        <div class="option-box background">
+          <h4>Change background</h4>
+          <div class="option">
+            <button class="active on" data-bg_option="on">On</button>
+            <button class="off" data-bg_option="off">Off</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Setting box -->
+    <!-- Start Header -->
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="./imgs/logo.png" />
+        </div>
+        <ul class="heder-options">
+          <li><a href="#Plattform">Courses</a></li>
+          <li><a href="#Services">Services</a></li>
+          <li><a href="#Contact">Contact</a></li>
+        </ul>
+        <!-- <div class="mode">
+          <i class="dark fa-solid fa-moon"></i>
+          <i class="light fa-solid fa-sun"></i>
+        </div> -->
+        <button class="sign" type="button">Sign in</button>
+        <button class="sign" type="button">Sign up</button>
+      </nav>
+    </header>
+    <!-- End Header -->
+
+    <div class="main-page">
+      <!-- Start Hero section -->
+      <div class="overlay">
+        <section class="hero-section">
+          <h1>M<span>O</span>RTA<span>Q</span>I</h1>
+          <h2>Learn <span>|</span>Evolve <span>|</span>Elevate</h2>
+          <p>
+            We are a trusted leader with a long-standing history in advertising,
+            brand development, and social media management. We deliver
+            innovative creative solutions and strategic marketing campaigns that
+            elevate your brand and establish your dominant digital presence.
+          </p>
+        </section>
+      </div>
+      <!-- End Hero sectio -->
+    </div>
+    <!-- start courses section -->
+    <section id="Plattform">
+      <div class="container">
+        <h1>Courses</h1>
+        <p class="courses-text">
+          Gain market-ready skills with our professional, expert-led courses.
+          Designed for hands-on learning and real-world results, we help you
+          unlock your potential and advance your career with confidence
+        </p>
+        <div class="card">
+          <div class="course">
+            <div class="upper-box">
+              <div class="upper">
+                <img src="./imgs/courses/v.jpg" alt="" />
+                <div class="overlay"></div>
+              </div>
+            </div>
+            <div class="lower">
+              <div class="info">
+                <p class="text">Level</p>
+                <div class="span-i">
+                  <span>hard</span>
+                  <i class="c-red fa-regular fa-star"></i>
+                  <i class="c-red fa-regular fa-star"></i>
+                  <i class="c-red fa-regular fa-star"></i>
+                </div>
+              </div>
+              <div class="info">
+                <p class="text">Hours</p>
+                <div class="span-i">
+                  <span>10h</span>
+                  <i class="fa-regular fa-clock"></i>
+                </div>
+              </div>
+              <div class="info">
+                <p class="text">Progress</p>
+                <span
+                  class="progress"
+                  data-progress="30%"
+                  style="--w: 30%"
+                ></span>
+                <span class="ratio">30%</span>
+              </div>
+              <button class="btn">View course</button>
+            </div>
+          </div>
+          <div class="course">
+            <div class="upper-box">
+              <div class="upper">
+                <img src="./imgs/courses/d.jpg" alt="" />
+                <div class="overlay"></div>
+              </div>
+            </div>
+            <div class="lower">
+              <div class="info">
+                <p class="text">Level</p>
+                <div class="span-i">
+                  <span>intermediate</span>
+                  <i class="c-yellow fa-regular fa-star"></i>
+                  <i class="c-yellow fa-regular fa-star"></i>
+                </div>
+              </div>
+              <div class="info">
+                <p class="text">Hours</p>
+                <div class="span-i">
+                  <span>5h</span>
+                  <i class="fa-regular fa-clock"></i>
+                </div>
+              </div>
+              <div class="info">
+                <p class="text">Progress</p>
+                <span
+                  class="progress"
+                  data-progress="70%"
+                  style="--w: 70%"
+                ></span>
+                <span class="ratio">70%</span>
+              </div>
+              <button class="btn">View course</button>
+            </div>
+          </div>
+          <div class="course">
+            <div class="upper-box">
+              <div class="upper">
+                <img src="./imgs/courses/c.jpg" alt="" />
+                <div class="overlay"></div>
+              </div>
+            </div>
+            <div class="lower">
+              <div class="info">
+                <p class="text">Level</p>
+                <div class="span-i">
+                  <span>easy</span>
+                  <i class="c-blue fa-regular fa-star"></i>
+                </div>
+              </div>
+              <div class="info">
+                <p class="text">Hours</p>
+                <div class="span-i">
+                  <span>3h</span>
+                  <i class="fa-regular fa-clock"></i>
+                </div>
+              </div>
+              <div class="info">
+                <p class="text">Progress</p>
+                <span
+                  class="progress"
+                  data-progress="50%"
+                  style="--w: 50%"
+                ></span>
+                <span class="ratio">0%</span>
+              </div>
+              <button class="btn">View course</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End courses section -->
+    <!-- start services section -->
+    <section id="Services">
+      <div class="container">
+        <h1>Services</h1>
+        <div class="card" data-dir="r">
+          <div class="text">
+            <h3>Video Editing</h3>
+            <p>
+              High-quality video production tailored for results. From dynamic
+              promo clips to engaging social content, we bring your vision to
+              life with sharp cuts, vibrant storytelling, and professional
+              finishing touches
+            </p>
+          </div>
+          <div class="photo">
+            <img src="./imgs/services/v.jpg" alt="" />
+          </div>
+        </div>
+        <div class="card" data-dir="l">
+          <div class="text">
+            <h3>Social Media Management</h3>
+            <p>
+              Elevate your brand’s online presence with expert social media
+              management. We handle everything from content scheduling and
+              community engagement to performance analytics across all major
+              platforms. Our data-driven strategies build loyal communities,
+              increase brand awareness, and drive consistent growth for your
+              business
+            </p>
+          </div>
+          <div class="photo">
+            <img src="./imgs/services/w.jpg" alt="" />
+          </div>
+        </div>
+        <div class="card" data-dir="r">
+          <div class="text">
+            <h3>Professional Content Writing</h3>
+            <p>
+              Compelling words that captivate and convert. We provide
+              professional content writing services tailored to your audience,
+              including SEO-optimized blog posts, engaging website copy, and
+              persuasive technical content. We blend deep research with creative
+              storytelling to establish your authority and deliver measurable
+              results
+            </p>
+          </div>
+          <div class="photo">
+            <img src="./imgs/services/ww.jpg" alt="" />
+          </div>
+        </div>
+        <div class="card" data-dir="l">
+          <div class="text">
+            <h3>Affiliate Marketing</h3>
+            <p>
+              Unlock new revenue streams with a custom affiliate marketing
+              strategy. We design and manage comprehensive programs that connect
+              your products with the right influencers and partners. Our focus
+              is on building scalable, performance-based partnerships that
+              expand your reach, boost conversions, and maximize ROI
+            </p>
+          </div>
+          <div class="photo">
+            <img src="./imgs/services/m.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End services section -->
+    <!-- Start contact section -->
+    <section id="Contact">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p class="courses-text">
+          Feel free to reach out to us using the contact details provided below,
+          or stay connected by following us across our various social media
+          platforms
+        </p>
+        <div class="template">
+          <div class="contact-info">
+            <div class="content">
+              <i class="icon fa-solid fa-phone"></i>
+              <span class="contact-txt">+201065328445</span>
+            </div>
+            <div class="content">
+              <i class="icon fa-regular fa-envelope"></i>
+              <span class="contact-txt">mortaqiac@gmail.com</span>
+            </div>
+            <div class="content">
+              <i class="icon fa-solid fa-location-dot"></i>
+              <span class="contact-txt">Cairo, Egypt</span>
+            </div>
+            <div class="social-media">
+              <h3>Follow us</h3>
+              <a
+                href="https://www.facebook.com/profile.php?id=61587665941739"
+                target="_blank"
+                ><i class="face fa-brands fa-square-facebook"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/@abdelrhman_elgamal1"
+                target="_blank"
+              >
+                <i class="youtube fa-brands fa-youtube"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/abdelrhman.waay/"
+                target="_blank"
+                ><i class="insta fa-brands fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@abdelrhman.elgamal"
+                target="_blank"
+                ><i class="tik fa-brands fa-tiktok"></i
+              ></a>
+            </div>
+          </div>
+          <div class="form">
+            <h3>
+              Have a question or need assistance? Simply complete the form below
+              with your message, and our team will reach out to you shortly.
+            </h3>
+            <form id="contact-form">
+              <label for="full-name">Full name</label>
+              <input
+                type="text"
+                id="full-name"
+                name="full-name"
+                placeholder="Ex. Osama Elzero"
+                required
+              />
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Ex. Osama Elzero@yahoo.com"
+                required
+              />
+              <label for="phone">Phone</label>
+              <input
+                type="text"
+                id="phone"
+                name="phone"
+                placeholder="Ex. +20123456789"
+                required
+              />
+              <label for="msg">Write your message</label>
+              <textarea name="text" id="msg" required></textarea>
+              <button class="btn" type="submit">Send msg</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End contact section -->
+    <!-- start footer -->
+    <footer id="Footer">
+      <div class="foot">
+        <p>&copy; 2026 Mortaqi. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <!-- End footer -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
