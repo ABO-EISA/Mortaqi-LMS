@@ -282,7 +282,7 @@ contactForm.addEventListener("submit", async (event) => {
   const jsonData = JSON.stringify(data);
   try {
     const response = await fetch(
-      "https://script.google.com/macros/s/AKfycbyHnaDOsYMzm-nvnwdQeXGQNJDYBnleRpkcr7F1dMUroO0R9izx2CDUoAA7p5wNRfjiMg/exec",
+      "https://script.google.com/macros/s/AKfycbzd8JxV3BaWGmupAw0dK31E8eEd4C-8PKHNtwtU1FHNL7dzmW8bL5OrW6PF1py6DPGh8Q/exec",
       {
         method: "POST",
         headers: {
