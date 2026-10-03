@@ -209,7 +209,7 @@ let obs2 = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("show");
-        observer.unobserve(entry.target);
+        obs2.unobserve(entry.target);
       }
     });
   },
@@ -231,8 +231,9 @@ let fullName = document.querySelector("#full-name");
 let email = document.querySelector("#email");
 let phone = document.querySelector("#phone");
 let msg = document.querySelector("#msg");
+let submitBtn = contactForm.querySelector(".submitBtn");
 
-let nameRegex = /^[a-zA-Z\s]+$/;
+let nameRegex = /^(?=.*[a-zA-Z])[a-zA-Z ]+$/;
 let phoneRegex = /^\+201[0125][0-9]{8}$/;
 // use setCustomValidity("") to show msg like required msg
 fullName.addEventListener("input", () => {
@@ -261,16 +262,8 @@ phone.addEventListener("input", () => {
 });
 
 // 2) sent data of user to Google Sheet
-let contactAttempts = Number(localStorage.getItem("contactAttempts")) || 0;
 contactForm.addEventListener("submit", async (event) => {
   event.preventDefault();
-  // Check attempts
-  if (contactAttempts >= 2) {
-    alert(
-      "You have reached the maximum number of messages. Please sign up to send more.",
-    );
-    return;
-  }
   // Collect form data
   const data = {
     name: fullName.value.trim(),
@@ -280,9 +273,18 @@ contactForm.addEventListener("submit", async (event) => {
   };
   // Convert Object to JSON
   const jsonData = JSON.stringify(data);
+  // disable submit button while proceesing
+  let originalBtnText = "";
+  if (submitBtn) {
+    originalBtnText = submitBtn.innerText;
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Sending...";
+    submitBtn.classList.add("hold");
+  }
+
   try {
     const response = await fetch(
-      "https://script.google.com/macros/s/AKfycbzd8JxV3BaWGmupAw0dK31E8eEd4C-8PKHNtwtU1FHNL7dzmW8bL5OrW6PF1py6DPGh8Q/exec",
+      "https://script.google.com/macros/s/AKfycbx4cyvY0WPEd9GRxbQkOMV4WbYMSNPTjf_75DZXOSadBIeLLvSnB85x0ezmZDaGfoOp-A/exec",
       {
         method: "POST",
         headers: {
@@ -291,19 +293,30 @@ contactForm.addEventListener("submit", async (event) => {
         body: jsonData,
       },
     );
-    console.log(response.ok);
-    if (response.ok) {
-      contactAttempts++;
-      localStorage.setItem("contactAttempts", contactAttempts);
-
-      alert("Your message was sent successfully.");
+    if (!response.ok) {
+      alert("Request failed");
+    }
+    const result = await response.json();
+    if (result.status === "limit_reached") {
+      alert(
+        result.message ||
+          "You have reached the maximum number of messages, Please Sign up.",
+      );
+    } else if (result.status === "success") {
+      alert(result.message || "Your message was sent successfully.");
       contactForm.reset();
     } else {
-      alert("Something went wrong. Please try again.");
+      alert("Some thing went wrong, Check that all data is in correctly way");
     }
   } catch (error) {
     alert(
       "Unable to send your message. Please check your internet connection and try again.",
     );
+  } finally {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerText = originalBtnText;
+      submitBtn.classList.remove("hold");
+    }
   }
 });
